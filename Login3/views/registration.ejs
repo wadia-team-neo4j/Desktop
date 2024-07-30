@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="navbar">
+		
+		<nav>
+			<ul id='MenuItems'>
+				
+				<li><button class='loginbtn' onclick="document.getElementById('about-form').style.display='block'" style="width:auto;">About</button></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+           <!-- signup -->
+			<div class="signup">
+				<form action="/register" method="post">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" id="name" name="name" placeholder="User name" >
+					<input type="number" id="number" name="number" placeholder="Phone number" >
+					<input type="email" id="email" name="email" placeholder="Email" >
+					<input type="password" id="password" name="password" placeholder="Password" >
+					<input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password" >
+					<button type="submit">Sign up</button>
+				</form>
+			</div>
+         <!-- login -->
+			<div class="login">
+				<form method="post" action="/login">
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" id="email" name="email" placeholder="Email" required="">
+					<input type="password" id="password" name="password" placeholder="Password" required="">
+					<button>Login</button>
+				</form>
+			</div>
+	</div>
+
+	<div id='about-form'class='about-page'></div>
+	<div class="form-box">
+		<div class='button-box'>
+			<div id='text'></div>
+			<button type='text'onclick='about()'>About</button>
+			
+		</div>
+	</div>
+</div>
+
+	<script>
+        var modal = document.getElementById('about-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
